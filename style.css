@@ -1,0 +1,72 @@
+@charset "UTF-8";
+:root{
+    --clr-white: #fff;
+    --clr-black: #000;
+    --clr-silver: #4c0abc
+}
+html, body { height: 100%; }
+body{
+    margin: 0;
+    background-color: var(--clr-white);
+    color: var(--clr-black);
+}
+a{
+    text-decoration: none;
+    color: var(--clr-white);
+}
+ul{
+    list-style: none;
+}
+.header{
+    position: relative;
+}
+.header__menu{
+    width: 150px;
+    position: absolute;
+    top: 6px;
+    right: 15px;
+    font-size: 1.5rem;
+    background-color: var(--clr-silver);
+    clip-path: polygon(82% 15%, 98% 15%, 98% 16.5%, 82% 16.5%);
+    transition: all 0.6s cubic-bezier(1, 0, 0.2, 0.9);
+}
+.active .header__menu{
+    clip-path: polygon(101% -1%, 101% 101%, -1% 101%, -1% -1%);
+    top: 0;
+    right: 0;
+    width: 100%;
+}
+.header__ul > li{
+    margin: 1rem auto;
+}
+.active{
+    transform: scale(1);
+}
+.header_svg{
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.header_svg_g{
+    stroke: var(--clr-silver);
+    transition: stroke 0.6s cubic-bezier(0, 0, 0.2, 1.6);
+}
+.active .header_svg_g{
+    stroke: var(--clr-white);
+}
+.path{
+    transition: transform 0.6s cubic-bezier(1, 0, 0.2, 0.9);
+}
+.path1{
+    transform-origin: 190px 20px;
+}
+.path2{
+    transform-origin: 190px 28px;
+}
+.active .path1{
+    transform: translateY(125px) rotate(45deg);
+}
+.active .path2{
+    transform: translateX(-45px) rotate(-45deg);
+}
